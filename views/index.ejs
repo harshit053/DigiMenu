@@ -1,0 +1,28 @@
+<%- include ("partials/header") %>
+
+    <h1>What will you like to have today?</h1>
+
+    <section class="foodType-container">
+        <% foodTypes.forEach(function(foodType) { %>
+            <a class="scroll" href="#<%= foodType._id %>"><div class="food-type">
+                <img class="food-image" src="<%= foodType.image %>" alt="">
+                <p><%= foodType.name %></p>
+            </div></a>
+        <% }); %>
+    </section>
+
+    <% foodTypes.forEach(function(foodType) { %>
+        <section id="<%= foodType._id %>" class="food-container">
+            <h1><%= foodType.name %></h1>
+            <section class="foodType-container">
+                <% foodType.foods.forEach(function(food) { %>
+                    <div class="food-type">
+                        <img class="food-image" src="<%= food.image %>" alt="">
+                        <p><%= food.name %></p>
+                    </div>
+                <% }); %>
+            </section>
+        </section>
+    <% }); %>
+
+<%- include ("partials/footer") %>

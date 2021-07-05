@@ -1,0 +1,96 @@
+body {
+    margin: 0px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    margin: 30px 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #0d5ec756;
+    width: 100%;
+}
+
+#logo {
+    font-weight: 500;
+    font-size: 28px;
+}
+
+#left-nav {
+    /* border: 1px solid black; */
+    display: flex;
+    flex: 1 0.5 30%;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+#mid-nav {
+    /* border: 1px solid black; */
+    display: flex;
+    flex: 1 4 60%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+}
+
+#right-nav {
+    /* border: 1px solid black; */
+    display: flex;
+    flex: 1 1 20%;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.nav-items {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 10px;
+}
+
+.food-type {
+    height: 200px;
+    box-shadow: 5px 5px 20px #cfcfcf;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 300px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.foodType-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.food-image {
+    height: 150px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.food-container {
+    display: flex;
+    flex-direction: column;
+}

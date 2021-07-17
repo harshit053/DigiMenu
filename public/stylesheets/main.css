@@ -80,7 +80,7 @@ ul {
 }
 
 .food-image {
-    height: 150px;
+    height: 175px;
     width: 300px;
     border-radius: 5px;
 }
@@ -93,4 +93,70 @@ a {
 .food-container {
     display: flex;
     flex-direction: column;
+}
+
+.foods {
+    position: relative;
+    height: 250px;
+    box-shadow: 5px 5px 20px #cfcfcf;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 300px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.food-desc {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+.fa-cart-plus {
+    font-size: 25px;
+}
+
+.fa-heart {
+    position: absolute;
+    top: 1%;
+    right: 5%;
+    color: white;
+    font-size: 18px;
+}
+
+.search-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+input[type="search"] {
+    width: 60%;
+    border-radius: 20px;
+    border: 1px solid #0d5ec7;
+    padding: 2px 25px;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    margin-right: 30px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+input[type="search"]:focus {
+    outline: none;
+}
+
+input[type="submit"] {
+    width: 10%;
+    border-radius: 20px;
+    border: 1px solid #0d5ec7;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    margin-bottom: 25px;
+    margin-top: 20px;
 }

@@ -22,7 +22,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/menu", function(req, res) {
-    FoodType.find({}, function(err, foodTypes) {
+    FoodType.find({}).populate("foods").exec(function(err, foodTypes) {
         if(err) {
             console.log(err);
         } else {

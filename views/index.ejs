@@ -1,13 +1,20 @@
 <%- include ("partials/header") %>
 
-    <h1>What will you like to have today?</h1>
+    <label for="search"><h1>What will you like to have today?</h1></label>
+    
+    <div class="search-wrapper">
+        <input type="search" id="search" placeholder="Search here">
+        <input type="submit" placeholder="Search">
+    </div>
 
     <section class="foodType-container">
         <% foodTypes.forEach(function(foodType) { %>
-            <a class="scroll" href="#<%= foodType._id %>"><div class="food-type">
-                <img class="food-image" src="<%= foodType.image %>" alt="">
-                <p><%= foodType.name %></p>
-            </div></a>
+            <a class="scroll" href="#<%= foodType._id %>">
+                <div class="food-type">
+                    <img class="food-image" src="<%= foodType.image %>" alt="">
+                    <p><%= foodType.name %></p>
+                </div>
+            </a>
         <% }); %>
     </section>
 
@@ -16,9 +23,14 @@
             <h1><%= foodType.name %></h1>
             <section class="foodType-container">
                 <% foodType.foods.forEach(function(food) { %>
-                    <div class="food-type">
+                    <div class="foods">
+                        <i class="fas fa-heart"></i>
                         <img class="food-image" src="<%= food.image %>" alt="">
                         <p><%= food.name %></p>
+                        <div class="food-desc">
+                            <div>Rs. <%= food.price %></div>
+                            <a href="#"><i class="fas fa-cart-plus"></i></a>
+                        </div>
                     </div>
                 <% }); %>
             </section>

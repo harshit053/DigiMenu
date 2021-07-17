@@ -3,7 +3,8 @@ var mongoose = require("mongoose");
 var foodSchema = new mongoose.Schema(
     {
         name: String,
-        image: String
+        image: String,
+        price: Number
     }
 );
 

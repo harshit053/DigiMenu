@@ -1,0 +1,31 @@
+<%- include ("partials/header") %>
+
+<div class="form-container">
+    <h1>Add new food Type to the menu.</h1>
+    <form action="/foodType" method="POST">
+        <input type="text" name="name" placeholder="Name*" required><br>
+        <input type="text" name="image" placeholder="Image"><br>
+        <input type="submit" placeholder="Add new Food-Type" class="new-submit">
+    </form>
+</div>
+
+<hr class="line">
+
+<div class="form-container">
+    <h1>Add new item to the menu.</h1>
+    <form action="/food" method="POST">
+        <input type="text" name="name" placeholder="Name*" required><br>
+        <input type="text" name="image" placeholder="Image"><br>
+        <input type="number" name="price" placeholder="Price*" min="0" required><br>
+        <select name="food-type" required>
+            <option value="" disabled selected>Select Food Type*</option>
+            <% foodTypes.forEach(function(foodType) { %>
+                <option value="<%= foodType.name %>"><%= foodType.name %></option>
+            <% }) %>
+        </select>
+        <input type="submit" placeholder="Add new Food-Type" class="new-submit">
+    </form>
+
+</div>
+
+<%- include ("partials/footer") %>

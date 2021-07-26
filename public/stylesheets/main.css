@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-    margin: 30px 50px;
+    text-align: center;
 }
 
 nav {
@@ -134,7 +134,7 @@ a {
 }
 
 input[type="search"] {
-    width: 60%;
+    min-width: 60%;
     border-radius: 20px;
     border: 1px solid #0d5ec7;
     padding: 2px 25px;
@@ -146,12 +146,12 @@ input[type="search"] {
     margin-top: 20px;
 }
 
-input[type="search"]:focus {
+input:focus, select:focus {
     outline: none;
 }
 
-input[type="submit"] {
-    width: 10%;
+.search-submit {
+    min-width: 10%;
     border-radius: 20px;
     border: 1px solid #0d5ec7;
     font-size: 20px;
@@ -159,4 +159,49 @@ input[type="submit"] {
     font-weight: 400;
     margin-bottom: 25px;
     margin-top: 20px;
+}
+
+input, select {
+    min-width: 60%;
+    border-radius: 20px;
+    border: 1px solid #0d5ec7;
+    padding: 2px 25px;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    margin-right: 30px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.new-submit {
+    min-width: 20%;
+    border-radius: 20px;
+    border: 1px solid #0d5ec7;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    margin: 25px 27%;
+}
+
+hr.line {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+select {
+    width: 83%
 }

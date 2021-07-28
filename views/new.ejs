@@ -1,6 +1,6 @@
 <%- include ("partials/header") %>
 
-<div class="form-container">
+<!-- <div class="form-container">
     <h1>Add new food Type to the menu.</h1>
     <form action="/foodType" method="POST">
         <input type="text" name="name" placeholder="Name*" required><br>
@@ -9,21 +9,22 @@
     </form>
 </div>
 
-<hr class="line">
+<hr class="line"> -->
 
 <div class="form-container">
     <h1>Add new item to the menu.</h1>
-    <form action="/food" method="POST">
-        <input type="text" name="name" placeholder="Name*" required><br>
-        <input type="text" name="image" placeholder="Image"><br>
-        <input type="number" name="price" placeholder="Price*" min="0" required><br>
-        <select name="food-type" required>
-            <option value="" disabled selected>Select Food Type*</option>
+    <form action="/menu" method="POST">
+        <input type="text" name="food[name]" placeholder="Name*" required><br>
+        <input type="text" name="food[image]" placeholder="Image"><br>
+        <input type="number" name="food[price]" placeholder="Price*" min="0" required><br>
+        <input list="food-types" name="foodTypeName" placeholder="Select or Enter the Food Type*" required><br>
+        <datalist id="food-types">
             <% foodTypes.forEach(function(foodType) { %>
-                <option value="<%= foodType.name %>"><%= foodType.name %></option>
+                <option value="<%= foodType.name %>">
             <% }) %>
-        </select>
-        <input type="submit" placeholder="Add new Food-Type" class="new-submit">
+        </datalist>
+        <input type="text" name="foodTypeImage" placeholder="Food Type Image"><br>
+        <input type="submit" class="new-submit">
     </form>
 
 </div>

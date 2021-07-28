@@ -1,4 +1,5 @@
-var mongoose = require("mongoose");
+var mongoose     = require("mongoose"),
+    findOrCreate = require('mongoose-find-or-create');
 
 var foodTypeSchema = new mongoose.Schema(
     {
@@ -11,6 +12,7 @@ var foodTypeSchema = new mongoose.Schema(
             }
         ]
     }
-);
+)
+foodTypeSchema.plugin(findOrCreate);
 
 module.exports = mongoose.model("FoodType", foodTypeSchema);

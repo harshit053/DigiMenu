@@ -1,7 +1,8 @@
-var express = require("express"),
-    app     = express(),
-    bodyParser = require("body-parser"),
-    mongoose   = require("mongoose");
+var express      = require("express"),
+    app          = express(),
+    bodyParser   = require("body-parser"),
+    mongoose     = require("mongoose"),
+    findOrCreate = require('mongoose-find-or-create');
 
 var FoodType = require("./models/foodType"),
     Food     = require("./models/food"),
@@ -10,6 +11,7 @@ var FoodType = require("./models/foodType"),
 
 mongoose.connect("mongodb://localhost/DigiMenu", { useNewUrlParser: true, useUnifiedTopology: true });
 
+app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
@@ -32,6 +34,29 @@ app.get("/menu", function(req, res) {
         }
     });
 });
+
+
+//Create Page
+app.post("/menu", function(req, res) {
+    FoodType.findOrCreate({name: req.body.foodTypeName}, {name: req.body.foodTypeName, image: req.body.foodTypeImage}, function(err, foodType) {
+        if(err) {
+            console.log(err);
+            res.redirect("/menu");
+        } else {
+            Food.create(req.body.food, function(err, food) {
+                if(err) {
+                    console.log(err);
+                    res.redirect("/menu");
+                } else {
+                    foodType.foods.push(food);
+                    foodType.save();
+                    res.redirect("/menu/new")
+                }
+            });
+        }
+    });
+});
+
 
 //New Page
 app.get("/menu/new", function(req, res) {

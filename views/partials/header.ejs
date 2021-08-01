@@ -23,7 +23,12 @@
             </ul>
 
             <ul id="right-nav">
-                <li class="nav-items">Login</li>
-                <li class="nav-items">Signup</li>
+                <% if(!currentUser) { %>
+                    <li class="nav-items"><a href="/login">Login</a></li>
+                    <li class="nav-items"><a href="/signup">Signup</a></li>
+                <% } else { %>
+                    <li><a href="#">Signed In As <%= currentUser.username %></a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <% } %>
             </ul>
         </nav>

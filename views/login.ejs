@@ -1,0 +1,16 @@
+<%- include ("partials/header") %>
+
+<div class="form-container">
+    <h1>Login</h1>
+    <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username*" required><br>
+        <input type="password" name="password" placeholder="Password*" required><br>
+        <input type="submit" class="new-submit" value="Login">
+    </form>
+</div>
+
+<hr>
+
+<h3><a href="signup">New To DigiMenu? Create An Account</a></h3>
+
+<%- include ("partials/footer") %>

@@ -9,21 +9,21 @@ var express      = require("express"),
 /* Requireing Mongoose Models */
 var FoodType = require("./models/foodType"),
     Food     = require("./models/food"),
-    User     = require("./models/user"),
-    seedDB   = require("./seed");
+    User     = require("./models/user");
+    //seedDB   = require("./seed");
 
 /* Requireing Routes */
 var menuRoutes  = require("./routes/menu"),
     indexRoutes = require("./routes/index");
 
-
-mongoose.connect("mongodb://localhost/DigiMenu", { useNewUrlParser: true, useUnifiedTopology: true });
+var url = process.env.DATABASEURL || "mongodb://localhost/DigiMenu";
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-seedDB();
+// seedDB();
 
 
 //PASSPORT CONFIGURATION
